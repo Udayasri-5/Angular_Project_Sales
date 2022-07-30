@@ -1,0 +1,67 @@
+     
+<div class="container"></div>
+<table class="table">
+    <tr>
+
+        <th>First Name</th>
+        <th> Last name</th>
+        <th>Email ID</th>
+        <th>Salary</th>
+        <th>Sales Volume</th>
+    </tr>
+
+    <tr *ngFor="let person of salesPersonList" [ngClass]="{'metaQuote':person.salary>=20000,
+    'nonMetaQuote':person.salary<20000}">
+    <td>{{person.firstname}}</td>
+    <td>{{person.lastname}}</td>
+    <td>{{person.email}}</td>
+    <td>{{person.salary}}</td>
+    <td>{{person.salesVolume}}</td>
+
+     </tr>
+</table>
+
+<hr> 
+
+<form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)"> 
+     &nbsp;
+    <div class="row">
+        <div class="col-sm-3"><label>Details Form</label></div>
+        
+    </div>
+    &nbsp;
+         
+    <div class="row">
+        <div class="col-sm-3"><label>FirstName</label></div>
+        <div class="col-sm-6"><input type="text" name="firstname" [(ngModel)]="formModel.firstname"/></div>
+    </div>
+    &nbsp;
+    <div class="row">
+        <div class="col-sm-3"><label>LastName</label></div>
+        <div class="col-sm-6"><input type="text" name="lastname" [(ngModel)]="formModel.lastname"/></div>
+    </div>
+    &nbsp;
+    <div class="row">
+        <div class="col-sm-3"><label>Email ID</label></div>
+        <div class="col-sm-6"><input type="text" name="email" [(ngModel)]="formModel.email"/></div>
+    </div>
+    &nbsp;
+    <div class="row">
+        <div class="col-sm-3"><label>Salary</label></div>
+        <div class="col-sm-6"><input type="text" name="salary" [(ngModel)]="formModel.salary"/></div>
+    </div>
+    &nbsp;
+    <div class="row">
+        <div class="col-sm-3"><label>Sales Volume</label></div>
+        <div class="col-sm-6"><input type="text" name="salesVolume" [(ngModel)]="formModel.salesVolume"/></div>
+    </div>
+    &nbsp;
+
+    <div class="row">
+        
+        <div class="col-sm-3">
+            <input type="submit" name="submit" value="submit" class="btn btn-primary"/></div>
+    </div>
+    &nbsp;
+</form>
+
